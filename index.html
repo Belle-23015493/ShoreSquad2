@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoreSquad</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo-nav">
+            <div class="logo">
+                <span style="font-size:2rem;vertical-align:middle;">🌊</span>
+                <span class="logo-text">ShoreSquad</span>
+            </div>
+            <nav class="top-nav">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">Events</a>
+                <a href="#" class="nav-link">Map</a>
+                <a href="#" class="nav-link">My Crew</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon">🗑️</div>
+                <div class="stat-value" id="stat-pounds">2500</div>
+                <div class="stat-label">Pounds Collected</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📍</div>
+                <div class="stat-value" id="stat-beaches">45</div>
+                <div class="stat-label">Beaches Cleaned</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-value" id="stat-squad">350</div>
+                <div class="stat-label">Squad Members</div>
+            </div>
+        </section>
+        <section class="upcoming-section">
+            <h2 class="beach-title">Upcoming Cleanups</h2>
+            <div class="upcoming-cards">
+                <div class="event-card">
+                    <div class="event-date">Jun 1</div>
+                    <div class="event-title">Santa Monica Beach Cleanup</div>
+                    <div class="event-location">Santa Monica Pier</div>
+                    <div class="event-time">09:00 AM</div>
+                    <div class="event-members">🧑‍🤝‍🧑 12 squad members</div>
+                    <button class="join-btn" onclick="joinSquad(this)">Join Squad</button>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">Jun 3</div>
+                    <div class="event-title">Venice Beach Squad Action</div>
+                    <div class="event-location">Venice Beach Boardwalk</div>
+                    <div class="event-time">08:30 AM</div>
+                    <div class="event-members">🧑‍🤝‍🧑 8 squad members</div>
+                    <button class="join-btn" onclick="joinSquad(this)">Join Squad</button>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">Jun 7</div>
+                    <div class="event-title">Malibu Coast Conservation</div>
+                    <div class="event-location">Malibu State Beach</div>
+                    <div class="event-time">07:00 AM</div>
+                    <div class="event-members">🧑‍🤝‍🧑 15 squad members</div>
+                    <button class="join-btn" onclick="joinSquad(this)">Join Squad</button>
+                </div>
+            </div>
+        </section>
+        <section id="map-section">
+            <h2 class="beach-title">Find Your Beach</h2>
+            <div class="beach-map-card">
+                <div class="beach-badge">Next Cleanup: Pasir Ris Beach</div>
+                <iframe
+                    title="Next Cleanup: Pasir Ris"
+                    width="100%"
+                    height="340"
+                    style="border:0; border-radius:18px; box-shadow:0 4px 16px rgba(30,144,255,0.10);"
+                    loading="lazy"
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15955.39339388944!2d103.955574!3d1.381497!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMS4zODE0OTcsIDEwMy45NTU1NzQ!3m2!1d1.381497!2d103.955574!4m5!3m4!1s0x0:0x0!8m2!3d1.381497!4d103.955574!16s%2Fg%2F11c4z7w2wz?hl=en">
+                </iframe>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <nav class="bottom-nav">
+            <a href="#" class="bottom-link active"><span>🏠</span><br>Home</a>
+            <a href="#" class="bottom-link"><span>📅</span><br>Events</a>
+            <a href="#" class="bottom-link"><span>🗺️</span><br>Map</a>
+            <a href="#" class="bottom-link"><span>👥</span><br>Squad</a>
+        </nav>
+        <p style="margin-top:1rem;">© 2025 ShoreSquad. Eco-action made fun!</p>
+    </footer>
+    <script src="js/app.js"></script>
+    <script>
+    function joinSquad(btn) {
+        btn.disabled = true;
+        btn.textContent = 'Joined!';
+        btn.classList.add('joined');
+        setTimeout(() => {
+            btn.disabled = false;
+            btn.textContent = 'Join Squad';
+            btn.classList.remove('joined');
+        }, 2000);
+    }
+    </script>
+</body>
+</html>
